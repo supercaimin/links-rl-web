@@ -1,0 +1,7 @@
+db:
+  adapter: mysql
+  host: gz-cdb-p2h5uz2c.sql.tencentcdb.com
+  name: qor
+  user: root
+  post: 62729
+  password: leishi@puai123
