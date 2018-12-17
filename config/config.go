@@ -31,12 +31,12 @@ var Config = struct {
 	HTTPS bool `default:"false" env:"HTTPS"`
 	Port  uint `default:"7000" env:"PORT"`
 	DB    struct {
-		Name     string `env:"DBName" default:"qor"`
+		Name     string `env:"DBName" default:"qor_example"`
 		Adapter  string `env:"DBAdapter" default:"mysql"`
-		Host     string `env:"DBHost" default:"gz-cdb-p2h5uz2c.sql.tencentcdb.com"`
-		Port     string `env:"DBPort" default:"62729"`
-		User     string `env:"DBUser" default:"root"`
-		Password string `env:"DBPassword" default:"leishi@puai123"`
+		Host     string `env:"DBHost" default:"localhost"`
+		Port     string `env:"DBPort" default:"3306"`
+		User     string `env:"DBUser"`
+		Password string `env:"DBPassword"`
 	}
 	S3 struct {
 		AccessKeyID     string `env:"AWS_ACCESS_KEY_ID"`
@@ -79,9 +79,9 @@ func init() {
 		panic(err)
 	}
 
-	location.GoogleAPIKey = Config.GoogleAPIKey
-	location.BaiduAPIKey = Config.BaiduAPIKey
-
+	//location.GoogleAPIKey = Config.GoogleAPIKey
+	//	location.BaiduAPIKey = Config.BaiduAPIKey
+	location.BaiduAPIKey = "ThL58RW58ct2XlNnW6O5xMaltKHhlqI2"
 	if Config.S3.AccessKeyID != "" {
 		oss.Storage = s3.New(&s3.Config{
 			AccessID:  Config.S3.AccessKeyID,

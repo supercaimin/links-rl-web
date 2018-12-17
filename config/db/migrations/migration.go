@@ -11,10 +11,12 @@ import (
 	"github.com/qor/qor-example/models/blogs"
 	"github.com/qor/qor-example/models/orders"
 	"github.com/qor/qor-example/models/products"
+	"github.com/qor/qor-example/models/propertys"
 	"github.com/qor/qor-example/models/seo"
 	"github.com/qor/qor-example/models/settings"
 	"github.com/qor/qor-example/models/stores"
 	"github.com/qor/qor-example/models/users"
+
 	"github.com/qor/transition"
 )
 
@@ -49,6 +51,10 @@ func init() {
 	AutoMigrate(&auth_identity.AuthIdentity{})
 
 	AutoMigrate(&banner_editor.QorBannerEditorSetting{})
+
+	AutoMigrate(&propertys.Area{}, &propertys.BuildingType{}, &propertys.Direction{}, &propertys.District{}, &propertys.Facility{},
+		&propertys.FloorZone{}, &propertys.NoOfBathRooms{}, &propertys.NoOfBedRooms{}, &propertys.Outdoor{}, &propertys.Condition{},
+		&propertys.Property{}, &propertys.PropertyLayouts{}, &propertys.PropertyViews{}, &propertys.Room{}, &propertys.PropertyType{})
 }
 
 // AutoMigrate run auto migration

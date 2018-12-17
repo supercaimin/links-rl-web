@@ -20,6 +20,8 @@ import (
 	"github.com/qor/qor-example/app/orders"
 	"github.com/qor/qor-example/app/pages"
 	"github.com/qor/qor-example/app/products"
+	"github.com/qor/qor-example/app/propertys"
+
 	"github.com/qor/qor-example/app/static"
 	"github.com/qor/qor-example/config"
 	"github.com/qor/qor-example/config/application"
@@ -83,6 +85,8 @@ func main() {
 	Application.Use(adminapp.New(&adminapp.Config{}))
 	Application.Use(home.New(&home.Config{}))
 	Application.Use(products.New(&products.Config{}))
+	Application.Use(propertys.New(&propertys.Config{}))
+
 	Application.Use(account.New(&account.Config{}))
 	Application.Use(orders.New(&orders.Config{}))
 	Application.Use(pages.New(&pages.Config{}))
