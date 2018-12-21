@@ -209,6 +209,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 		&admin.Section{
 			Title: "Upload Images",
 			Rows: [][]string{
+				{"MainImage"},
 				{"Images"},
 			}},
 		&admin.Section{
