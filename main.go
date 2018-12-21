@@ -18,6 +18,7 @@ import (
 	"github.com/qor/qor-example/app/home"
 	"github.com/qor/qor-example/app/pages"
 	"github.com/qor/qor-example/app/propertys"
+	"github.com/qor/qor-example/app/products"
 
 	"github.com/qor/qor-example/app/static"
 	"github.com/qor/qor-example/config"
