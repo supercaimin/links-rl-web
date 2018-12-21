@@ -96,7 +96,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	property.Meta(&admin.Meta{Name: "Rooms", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Direction", Type: "select_many"})
 
-	//property.UseTheme("grid")
+	property.UseTheme("grid")
 
 	district := Admin.AddResource(&propertys.District{}, &admin.Config{Menu: []string{"Property Settings"}})
 
@@ -166,7 +166,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	propertyType.EditAttrs("Name")
 	propertyType.NewAttrs(propertyType.EditAttrs())
 
-	property.IndexAttrs("MainImage", "For", "SellingPrice", "AskingRent", "Location")
+	property.IndexAttrs("MainImage", "For", "SellingPrice", "AskingRent", "Location.Address")
 
 	property.EditAttrs(
 		// &admin.Section{
