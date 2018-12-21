@@ -181,7 +181,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 			Title: "Selling Price",
 			Rows: [][]string{
 				{"SellingPrice", "SellingPriceRank"},
-				{"AskingRent", "Inclusive"},
+				{"AskingRent", "Inclusive", "For"},
 			//	{"ManagementFee", "GovRates"},
 			}},
 		&admin.Section{
