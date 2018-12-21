@@ -94,6 +94,8 @@ type Property struct {
 	l10n.Locale
 	sorting.SortingDESC
 
+	For string
+
 	MainImage media_library.MediaBox
 	Images    media_library.MediaBox
 
@@ -119,7 +121,7 @@ type Property struct {
 	NoOfBedRooms      NoOfBedRooms
 	FloorSpace        string
 	SaleableArea      string
-	OutdoorAread      string
+	OutdoorArea       string
 	NoOfBathRooms     NoOfBathRooms
 	PropertyViews     []PropertyViews
 	Condition         []Condition
@@ -128,6 +130,10 @@ type Property struct {
 	Outdoor     []Outdoor
 	Rooms       []Room
 	Direction   []Direction
+
+	ViewCount         int
+	IsPremierProperty bool
+	IsVaild           bool
 }
 
 type Areas []Area
@@ -155,4 +161,14 @@ func (areas Areas) Value() (driver.Value, error) {
 		return nil, nil
 	}
 	return json.Marshal(areas)
+}
+
+type Banner struct {
+	gorm.Model
+	l10n.Locale
+	sorting.SortingDESC
+	Title         string
+	SubTitle      string
+	Image         media_library.MediaBox
+	NavigateToURL string
 }

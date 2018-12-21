@@ -69,3 +69,10 @@ zh-CN:
     new_password: "新密码:"
     confirm_new_password: "确认新密码:"
     button: "重置"
+  navs:
+    home: "首页"
+    buy: "买盘"
+    rent: "租盘"
+    about: "关于我们"
+    join_our_team: "加入我们"
+    contact_us: "联系我们"

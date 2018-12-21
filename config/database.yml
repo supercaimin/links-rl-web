@@ -1,7 +1,7 @@
 db:
   adapter: mysql
-  host: localhost
-  name: qor_example
+  host: gz-cdb-p2h5uz2c.sql.tencentcdb.com
+  name: qor
   user: root
-  post: 3306
-  password: root
+  port: 62729
+  password: leishi@puai123

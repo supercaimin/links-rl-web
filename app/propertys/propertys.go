@@ -7,6 +7,7 @@ import (
 )
 
 var PriceRanks = []string{"Thousands", "Millions"}
+var Fors = []string{"Sell", "Rent"}
 
 // New new home app
 func New(config *Config) *App {
@@ -39,20 +40,53 @@ func (app App) ConfigureApplication(application *application.Application) {
 func (App) ConfigureAdmin(Admin *admin.Admin) {
 	// Property Management
 	Admin.AddMenu(&admin.Menu{Name: "Property Management", Priority: 1})
-	Admin.AddMenu(&admin.Menu{Name: "Property Settings", Priority: 2})
+	Admin.AddMenu(&admin.Menu{Name: "Property Settings", Priority: 3})
+	Admin.AddMenu(&admin.Menu{Name: "Messages", Priority: 2})
+	Admin.AddMenu(&admin.Menu{Name: "Position Management", Priority: 4})
+
+	Admin.AddResource(&propertys.Message{}, &admin.Config{Menu: []string{"Messages"}})
+	Admin.AddResource(&propertys.ListProperty{}, &admin.Config{Menu: []string{"Messages"}})
+
+	Admin.AddResource(&propertys.Banner{}, &admin.Config{Menu: []string{"Property Management"}})
+	Admin.AddResource(&propertys.Company{}, &admin.Config{Name: "Company Setting", Menu: []string{"Site Management"}, Singleton: true, Priority: 1})
+
+	position := Admin.AddResource(&propertys.Position{}, &admin.Config{Menu: []string{"Position Management"}})
+	position.IndexAttrs("Title", "WageDemands", "WorkingAddress")
+	position.Meta(&admin.Meta{Name: "Details", Config: &admin.RichEditorConfig{Plugins: []admin.RedactorPlugin{
+		{Name: "medialibrary", Source: "/admin/assets/javascripts/qor_redactor_medialibrary.js"},
+		{Name: "table", Source: "/vendors/redactor_table.js"},
+	},
+		Settings: map[string]interface{}{
+			"medialibraryUrl": "/system/media_libraries",
+		},
+	}})
 
 	// Add Property
 	property := Admin.AddResource(&propertys.Property{}, &admin.Config{Menu: []string{"Property Management"}})
 	//property.Meta(&admin.Meta{Name: "ContactPersons", Config: &admin.SelectManyConfig{SelectMode: "bottom_sheet"}})
 	property.Meta(&admin.Meta{Name: "ContactPersons", Config: &admin.SelectManyConfig{PrimaryField: "Name"}})
+	property.Meta(&admin.Meta{Name: "Owner", Label: "Username(Owner)"})
+	property.Meta(&admin.Meta{Name: "AgentReferenceNo", Label: "Agent's Reference No."})
 
-	property.Meta(&admin.Meta{Name: "SellingPriceRank", Config: &admin.SelectOneConfig{Collection: PriceRanks, AllowBlank: false}})
+	property.Meta(&admin.Meta{Name: "SellingPrice", Label: "SellingPrice(HK$)"})
+	property.Meta(&admin.Meta{Name: "SellingPriceRank", Label: "", Config: &admin.SelectOneConfig{Collection: PriceRanks, AllowBlank: false}})
+	property.Meta(&admin.Meta{Name: "For", Label: "For", Config: &admin.SelectOneConfig{Collection: Fors, AllowBlank: false}})
+
+	property.Meta(&admin.Meta{Name: "AskingRent", Label: "Asking Rent(HK$)"})
+	property.Meta(&admin.Meta{Name: "Inclusive", Label: "Inclusive?"})
+	property.Meta(&admin.Meta{Name: "ManagementFee", Label: "Management Fee(HK$)"})
+	property.Meta(&admin.Meta{Name: "GovRates", Label: "Gov. Rates(HK$)"})
+
 	property.Meta(&admin.Meta{Name: "PropertyType", Config: &admin.SelectOneConfig{AllowBlank: true}})
 	property.Meta(&admin.Meta{Name: "PropertyLayouts", Config: &admin.SelectOneConfig{AllowBlank: true}})
-	property.Meta(&admin.Meta{Name: "BuildingType", Config: &admin.SelectOneConfig{AllowBlank: true}})
+	property.Meta(&admin.Meta{Name: "BuildingType", Label: "Building Type(Unit)", Config: &admin.SelectOneConfig{AllowBlank: true}})
 	property.Meta(&admin.Meta{Name: "FloorZone", Config: &admin.SelectOneConfig{AllowBlank: true}})
-	property.Meta(&admin.Meta{Name: "NoOfBedRooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
-	property.Meta(&admin.Meta{Name: "NoOfBathRooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
+	property.Meta(&admin.Meta{Name: "NoOfBedRooms", Label: "No. Of Bedrooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
+	property.Meta(&admin.Meta{Name: "NoOfBathRooms", Label: "No. Of Bathdrooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
+
+	property.Meta(&admin.Meta{Name: "FloorSpace", Label: "Floor Space(sq.ft.)"})
+	property.Meta(&admin.Meta{Name: "SaleableArea", Label: "Saleable Area(sq.ft.)"})
+	property.Meta(&admin.Meta{Name: "OutdoorArea", Label: "Outdoor Area(sq.ft.)"})
 
 	property.Meta(&admin.Meta{Name: "PropertyViews", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Condition", Type: "select_many"})
@@ -65,7 +99,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 
 	district := Admin.AddResource(&propertys.District{}, &admin.Config{Menu: []string{"Property Settings"}})
 
-	areas := district.Meta(&admin.Meta{Name: "Areas"}).Resource
+	areas := district.Meta(&admin.Meta{Name: "Areas", Label: "Regions"}).Resource
 	areas.NewAttrs(&admin.Section{
 		Rows: [][]string{{"Name", "IsHot"}},
 	})
@@ -131,7 +165,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	propertyType.EditAttrs("Name")
 	propertyType.NewAttrs(propertyType.EditAttrs())
 
-	property.IndexAttrs("MainImage", "Owner", "AgentReferenceNo", "SellingPrice")
+	property.IndexAttrs("MainImage", "For", "Owner", "AgentReferenceNo", "SellingPrice")
 
 	property.EditAttrs(
 		&admin.Section{
@@ -139,7 +173,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 			Rows: [][]string{
 				{"MainImage"},
 				{"Owner", "AgentReferenceNo"},
-				{"ContactPersons"},
+				{"ContactPersons", "For"},
 				{"Remark"},
 			}},
 		&admin.Section{
@@ -162,7 +196,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 				{"PropertyLayouts", "BuildingType"},
 				{"FloorZone", "NoOfBedRooms"},
 				{"FloorSpace", "SaleableArea"},
-				{"OutdoorAread", "NoOfBathRooms"},
+				{"OutdoorArea", "NoOfBathRooms"},
 				{"PropertyViews", "Condition"},
 			}},
 		&admin.Section{
@@ -175,6 +209,11 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 			Title: "Upload Images",
 			Rows: [][]string{
 				{"Images"},
+			}},
+		&admin.Section{
+			Title: "Others",
+			Rows: [][]string{
+				{"IsPremierProperty", "IsVaild"},
 			}},
 	)
 

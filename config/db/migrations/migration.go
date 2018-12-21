@@ -54,7 +54,8 @@ func init() {
 
 	AutoMigrate(&propertys.Area{}, &propertys.BuildingType{}, &propertys.Direction{}, &propertys.District{}, &propertys.Facility{},
 		&propertys.FloorZone{}, &propertys.NoOfBathRooms{}, &propertys.NoOfBedRooms{}, &propertys.Outdoor{}, &propertys.Condition{},
-		&propertys.Property{}, &propertys.PropertyLayouts{}, &propertys.PropertyViews{}, &propertys.Room{}, &propertys.PropertyType{})
+		&propertys.Property{}, &propertys.PropertyLayouts{}, &propertys.PropertyViews{}, &propertys.Room{}, &propertys.PropertyType{},
+		&propertys.Position{}, &propertys.ListProperty{}, &propertys.Message{}, &propertys.Banner{}, &propertys.Company{}, &propertys.Area{})
 }
 
 // AutoMigrate run auto migration

@@ -15,11 +15,8 @@ import (
 	"github.com/qor/qor-example/app/account"
 	adminapp "github.com/qor/qor-example/app/admin"
 	"github.com/qor/qor-example/app/api"
-	"github.com/qor/qor-example/app/enterprise"
 	"github.com/qor/qor-example/app/home"
-	"github.com/qor/qor-example/app/orders"
 	"github.com/qor/qor-example/app/pages"
-	"github.com/qor/qor-example/app/products"
 	"github.com/qor/qor-example/app/propertys"
 
 	"github.com/qor/qor-example/app/static"
@@ -84,17 +81,17 @@ func main() {
 	Application.Use(api.New(&api.Config{}))
 	Application.Use(adminapp.New(&adminapp.Config{}))
 	Application.Use(home.New(&home.Config{}))
-	Application.Use(products.New(&products.Config{}))
+	//Application.Use(products.New(&products.Config{}))
 	Application.Use(propertys.New(&propertys.Config{}))
 
 	Application.Use(account.New(&account.Config{}))
-	Application.Use(orders.New(&orders.Config{}))
+	//Application.Use(orders.New(&orders.Config{}))
 	Application.Use(pages.New(&pages.Config{}))
-	Application.Use(enterprise.New(&enterprise.Config{}))
+	//Application.Use(enterprise.New(&enterprise.Config{}))
 
 	Application.Use(static.New(&static.Config{
-		Prefixs: []string{"javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico", "system"},
-		Handler: bindatafs.AssetFS.FileServer(http.Dir("public"), "javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico", "system"),
+		Prefixs: []string{"javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico", "system", "assets"},
+		Handler: bindatafs.AssetFS.FileServer(http.Dir("public"), "javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico", "system", "assets"),
 	}))
 
 	if *compileTemplate {

@@ -1,117 +1,178 @@
 <!doctype html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    {{render_seo_tag}}
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i|Playfair+Display|Raleway" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/dist/qor.css">
-    <script src="/vendors/jquery.js"></script>
-    <link href="//use.fontawesome.com/6a90f27203.css" media="all" rel="stylesheet">
-  </head>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LINKS Realty Limited</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="lian">
+<div class="main-deck">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/img/logo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <body>
-    {{ if current_user }}
-      {{render_action_bar}}
-    {{end}}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">{{ t "layout.navs.home" }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/buy.html">{{ t "layout.navs.buy" }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rent.html">{{ t "layout.navs.rent" }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">{{ t "layout.navs.about_us" }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/join.html">{{ t "layout.navs.join_our_team" }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">{{ t "layout.navs.contact_us" }}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/switch_locale?locale=en-US" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="./assets/img/local.png" alt=""> &nbsp; ENGLISH
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/switch_locale?locale=en-US">ENGLISH</a>
+                        <a class="dropdown-item" href="/switch_locale?locale=zh-CN">简体中文</a>
+                        <a class="dropdown-item" href="/switch_locale?locale=zh-HK">繁體中文</a>
+                    </div>
+                </li>
+            </ul>
 
-    <div class="header">
-      <header class="container">
-        <div class="grid">
-          <input type="checkbox" id="header-menustate" class="header__menustate" style="display: none" />
-          <label class="header__mobileicon" for="header-menustate">
-            <i class="material-icons">&#xE3C7;</i>
-          </label>
-
-          <div class="grid__col is-2 header__logo">
-            <a href="/" class="logo"><img src="/images/logo.png" /></a>
-          </div>
-
-          <a href="#" class="header__mobilemenu-cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          </a>
-
-          <div class="header__mobilemenu grid__col is-10">
-            <div class="header__menu">
-              <a href="/">Home</a>
-              <a href="/men">men</a>
-              <a href="/women">women</a>
-              <a href="/kids">kids</a>
-            </div>
-
-            <div class="header__func {{ if current_user }}header__func-login{{end}}">
-              {{ if current_user }}
-                <a href="/account">{{ t "layout.header_link.my_account" "account"}}</a>
-              {{ else }}
-                <a href="/auth/login">{{ t "layout.header_link.sign_in" }}</a>
-                <a href="/auth/register">{{ t "layout.header_link.register" "REGISTER" }}</a>
-              {{ end }}
-
-              <a href="/cart" class="header__menu-cart">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
         </div>
-      </header>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        {{range $message := flashes}}
-          {{if eq $message.Type "error"}}
-            <div class="alert alert-danger">{{$message.Message}}</div>
-          {{else}}
-            <div class="alert alert-success">{{$message.Message}}</div>
-          {{end}}
-        {{end}}
-      </div>
-    </div>
+    </nav>
 
     {{ yield }}
 
-    <footer class="footer">
-      <div class="container">
-
-        <div class="grid">
-          <div class="grid__col is-8">
-            <h4>{{ t "layout.connect" }}</h4>
-            <div class="society">
-              <a href="#"><img src="/images/twitter.png" /></a>
-              <a href="#"><img src="/images/facebook.png" /></a>
-              <a href="#"><img src="/images/gplus.png" /></a>
-              <a href="#"><img src="/images/youtube.png" /></a>
+    <footer>
+        <div class="container">
+            <div class="link-list float-left w-38">
+                <div class="list-header">
+                    <p class="list-title">Hong Kong Island</p>
+                </div>
+                <div class="link-list-2">
+                    <a href="javascript:">The Peak</a>
+                    <a href="javascript:">Central Mid-levels</a>
+                    <a href="javascript:">West Mid-levels</a>
+                    <a href="javascript:">East Mid-levels</a>
+                    <a href="javascript:">North Mid-levels</a>
+                    <a href="javascript:">Repulse Bay</a>
+                    <a href="javascript:">Stanley</a>
+                    <a href="javascript:">Tai Tam</a>
+                    <a href="javascript:">Pok Fu Lam</a>
+                </div>
             </div>
 
-            {{ t "layout.about_qor" }}
-
-            <!-- Switch language -->
-            <div class="footer__change-language">
-              <select>
-                <option {{ if (eq current_locale "en-US") }}selected{{end}} value="/switch_locale?locale=en-US">English</option>
-                <option {{ if (eq current_locale "zh-CN") }}selected{{end}} value="/switch_locale?locale=zh-CN">简体中文</option>
-              </select>
+            <div class="link-list float-left w-24">
+                <div class="list-header">
+                    <p class="list-title">Kowloon</p>
+                </div>
+                <div>
+                    <a href="javascript:">West Kowloon</a>
+                    <a href="javascript:">Ho Man Tin</a>
+                    <a href="javascript:">Kowloon Tong</a>
+                    <a href="javascript:">Others</a>
+                </div>
             </div>
-          </div>
 
-          <div class="grid__col is-4">
-            <h4>{{ t "layout.support_and_info" }}</h4>
+            <div class="link-list float-right w-24">
+                <div class="list-header">
+                    <p class="list-title">New Territories</p>
+                </div>
+                <div>
+                    <a href="javascript:">Sai Kung</a>
+                    <a href="javascript:">Tseung Kwan O</a>
+                    <a href="javascript:">Sha Tin</a>
+                    <a href="javascript:">Others</a>
+                </div>
+            </div>
 
-            <ul>
-              <li><a href="#">{{ t "layout.footer_link.faq" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.size_guide" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.shipping" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.privacy_policy" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.terms_of_use" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.press" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.about_us" }}</a></li>
-              <li><a href="#">{{ t "layout.footer_link.blog" }}</a></li>
-            </ul>
-          </div>
+            <div class="clearfix"></div>
+
+            <div class="link-list float-left w-16">
+                <div class="list-header">
+                    <p class="list-title">Quick Links</p>
+                </div>
+                <div>
+                    <a href="javascript:">Public Utility</a>
+                    <a href="javascript:">Hospital</a>
+                    <a href="javascript:">Bank</a>
+                    <a href="javascript:">School</a>
+                    <a href="javascript:">Hotel</a>
+                </div>
+            </div>
+
+            <div class="link-list float-left w-12">
+                <div class="list-header">
+                    <p class="list-title">Services</p>
+                </div>
+                <div>
+                    <a href="javascript:">Residential</a>
+                    <a href="javascript:">Commercial</a>
+                    <a href="javascript:">Shop</a>
+                </div>
+            </div>
+
+            <div class="link-list float-right w-60">
+                <div class="list-header">
+                    <p class="list-title">Contact Us</p>
+                </div>
+                <div>
+                    <div class="link-address">
+                        <p>Room 1004,10/F.,Officeplus@Wanchai,</p>
+                        <p>No.303 Hennessy Road,</p>
+                        <p>Wanchai,Hong Kong.</p>
+                    </div>
+                    <div class="link-tel">
+                        <p>Tel:( 852 ) 2123 1622</p>
+                        <p>Email:info@linksrealty.hk</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="clearfix"></div>
+        <p class="copyright">Copyright © Wan chai, No.303 Hennessy Road,Wanchai,hong kong..All right reserved</p>
     </footer>
-
-    <script src="/dist/app.js"></script>
-    {{render "shared/amazon_pay"}}
-  </body>
-</html>
+</div>
+<div class="bottom-card">
+    <div class="container">
+        <p class="bottom-card-title">Disclaimer</p>
+        <p class="bottom-card-text">The information contained on the list should be regarded solely as a reference
+            guide.It is subject to change without prior notice and does not form part of
+            any offer or contract.Whilst care has been taken in its preparation, no representaion is made or
+            responsibility accepted for the accuracy of the whole or any part thereof.</p>
+    </div>
+</div>
+<script src="/assets/js/jquery.slim.min.js"></script>
+<script src="/assets/js/flexible.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/swiper.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
+</script>
+</body>
+</html> 
