@@ -81,7 +81,7 @@ func main() {
 	Application.Use(api.New(&api.Config{}))
 	Application.Use(adminapp.New(&adminapp.Config{}))
 	Application.Use(home.New(&home.Config{}))
-	//Application.Use(products.New(&products.Config{}))
+	Application.Use(products.New(&products.Config{}))
 	Application.Use(propertys.New(&propertys.Config{}))
 
 	Application.Use(account.New(&account.Config{}))
