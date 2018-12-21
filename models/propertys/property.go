@@ -94,15 +94,15 @@ type Property struct {
 	l10n.Locale
 	sorting.SortingDESC
 
-	For string
+	For string `l10n:"sync"`
 
 	MainImage media_library.MediaBox
 	Images    media_library.MediaBox
 
-	Owner            string
-	ContactPersons   []users.User `l10n:"sync" gorm:"many2many:contact_persons;"`
-	AgentReferenceNo string
-	Remark           string
+	//Owner            string
+	//ContactPersons   []users.User `l10n:"sync" gorm:"many2many:contact_persons;"`
+	//AgentReferenceNo string
+	//Remark           string
 	SellingPrice     float64
 	SellingPriceRank string
 	AskingRent       float64
@@ -110,27 +110,27 @@ type Property struct {
 	ManagementFee    float64
 	GovRates         float64
 
-	location.Location `location:"name:Property Address"`
-	PropertyType      PropertyType
-	BuildingName      string
-	Floor             string
-	Unit              string
-	PropertyLayouts   PropertyLayouts
-	BuildingType      BuildingType
-	FloorZone         FloorZone
-	NoOfBedRooms      NoOfBedRooms
+	location.Location `l10n:"sync" location:"name:Property Address"`
+	PropertyType      PropertyType `l10n:"sync"`
+	BuildingName      string `l10n:"sync"`
+	Floor             string `l10n:"sync"`
+	Unit              string `l10n:"sync"`
+	PropertyLayouts   PropertyLayouts `l10n:"sync"`
+	BuildingType      BuildingType `l10n:"sync"`
+	FloorZone         FloorZone `l10n:"sync"`
+	NoOfBedRooms      NoOfBedRooms `l10n:"sync"`
 	//FloorSpace        string
-	GrossArea		string
-	SaleableArea      string
-	OutdoorArea       string
-	NoOfBathRooms     NoOfBathRooms
-	PropertyViews     []PropertyViews
+	GrossArea		string `l10n:"sync"`
+	SaleableArea      string `l10n:"sync"`
+	OutdoorArea       string `l10n:"sync"`
+	NoOfBathRooms     NoOfBathRooms `l10n:"sync"`
+	PropertyViews     []PropertyViews `l10n:"sync"`
 	//Condition         []Condition
 
-	Facitlities []Facility
-	Outdoor     []Outdoor
-	Rooms       []Room
-	Direction   []Direction
+	Facitlities []Facility `l10n:"sync"`
+	Outdoor     []Outdoor `l10n:"sync"`
+	Rooms       []Room `l10n:"sync"`
+	Direction   []Direction `l10n:"sync"`
 
 	ViewCount         int
 	IsPremierProperty bool
