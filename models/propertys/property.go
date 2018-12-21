@@ -9,7 +9,6 @@ import (
 	"github.com/qor/l10n"
 	"github.com/qor/location"
 	"github.com/qor/media/media_library"
-	"github.com/qor/qor-example/models/users"
 	"github.com/qor/sorting"
 )
 
