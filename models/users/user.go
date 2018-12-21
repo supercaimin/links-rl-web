@@ -41,7 +41,7 @@ func (user User) DisplayName() string {
 }
 
 func (user User) AvailableLocales() []string {
-	return []string{"en-US", "zh-CN"}
+	return []string{"en-US", "zh-CN", "zh-HK"}
 }
 
 type AvatarImageStorage struct{ oss.OSS }

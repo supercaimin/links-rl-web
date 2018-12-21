@@ -15,6 +15,7 @@ type Controller struct {
 
 // Index home index page
 func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
+	utils.SetCookie(http.Cookie{Name: "locale", Value: "en-US"}, &qor.Context{Request: req, Writer: w})
 	ctrl.View.Execute("index", map[string]interface{}{}, req, w)
 }
 

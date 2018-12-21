@@ -13,7 +13,7 @@ en-US:
       logout: "Logout"
       my_account: "MY ACCOUNT"
     footer_link:
-      faq: 'FAQs'
+      faq: 'FAxxxQs'
       size_guide: 'Size Guide'
       shipping: 'Shipping'
       privacy_policy: 'Privacy Policy'
@@ -69,3 +69,10 @@ en-US:
     new_password: "New Password:"
     confirm_new_password: "New Password Confirmation:"
     button: "Recover"
+  navs:
+    home: "HOME"
+    buy: "BUY"
+    rent: "RENT"
+    about: "ABOUT US"
+    join_our_team: "JOIN OUR TEAM"
+    contact_us: "CONTACT US"
