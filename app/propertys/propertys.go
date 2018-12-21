@@ -166,7 +166,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	propertyType.EditAttrs("Name")
 	propertyType.NewAttrs(propertyType.EditAttrs())
 
-	property.IndexAttrs("MainImage", "For", "SellingPrice", "AskingRent", "Location")
+	property.IndexAttrs("MainImage", "For", "SellingPrice", "AskingRent", "Location.Address")
 
 	property.EditAttrs(
 		// &admin.Section{
