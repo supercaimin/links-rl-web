@@ -64,11 +64,11 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	// Add Property
 	property := Admin.AddResource(&propertys.Property{}, &admin.Config{Menu: []string{"Property Management"}})
 	//property.Meta(&admin.Meta{Name: "ContactPersons", Config: &admin.SelectManyConfig{SelectMode: "bottom_sheet"}})
-	property.Meta(&admin.Meta{Name: "ContactPersons", Config: &admin.SelectManyConfig{PrimaryField: "Name"}})
-	property.Meta(&admin.Meta{Name: "Owner", Label: "Username(Owner)"})
-	property.Meta(&admin.Meta{Name: "AgentReferenceNo", Label: "Agent's Reference No."})
+	//property.Meta(&admin.Meta{Name: "ContactPersons", Config: &admin.SelectManyConfig{PrimaryField: "Name"}})
+	//property.Meta(&admin.Meta{Name: "Owner", Label: "Username(Owner)"})
+	//property.Meta(&admin.Meta{Name: "AgentReferenceNo", Label: "Agent's Reference No."})
 
-	property.Meta(&admin.Meta{Name: "SellingPrice", Label: "SellingPrice(HK$)"})
+	property.Meta(&admin.Meta{Name: "SellingPrice", Label: "Selling Price(HK$)"})
 	property.Meta(&admin.Meta{Name: "SellingPriceRank", Label: "", Config: &admin.SelectOneConfig{Collection: PriceRanks, AllowBlank: false}})
 	property.Meta(&admin.Meta{Name: "For", Label: "For", Config: &admin.SelectOneConfig{Collection: Fors, AllowBlank: false}})
 
@@ -96,7 +96,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	property.Meta(&admin.Meta{Name: "Rooms", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Direction", Type: "select_many"})
 
-	property.UseTheme("grid")
+	//property.UseTheme("grid")
 
 	district := Admin.AddResource(&propertys.District{}, &admin.Config{Menu: []string{"Property Settings"}})
 
@@ -166,7 +166,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	propertyType.EditAttrs("Name")
 	propertyType.NewAttrs(propertyType.EditAttrs())
 
-	property.IndexAttrs("MainImage", "For", "Owner", "AgentReferenceNo", "SellingPrice")
+	property.IndexAttrs("MainImage", "For", "SellingPrice", "AskingRent", "Location")
 
 	property.EditAttrs(
 		// &admin.Section{
