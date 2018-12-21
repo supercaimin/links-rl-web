@@ -119,12 +119,13 @@ type Property struct {
 	BuildingType      BuildingType
 	FloorZone         FloorZone
 	NoOfBedRooms      NoOfBedRooms
-	FloorSpace        string
+	//FloorSpace        string
+	GrossArea		string
 	SaleableArea      string
 	OutdoorArea       string
 	NoOfBathRooms     NoOfBathRooms
 	PropertyViews     []PropertyViews
-	Condition         []Condition
+	//Condition         []Condition
 
 	Facitlities []Facility
 	Outdoor     []Outdoor

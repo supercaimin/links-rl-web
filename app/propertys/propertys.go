@@ -84,12 +84,13 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	property.Meta(&admin.Meta{Name: "NoOfBedRooms", Label: "No. Of Bedrooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
 	property.Meta(&admin.Meta{Name: "NoOfBathRooms", Label: "No. Of Bathdrooms", Config: &admin.SelectOneConfig{AllowBlank: true}})
 
-	property.Meta(&admin.Meta{Name: "FloorSpace", Label: "Floor Space(sq.ft.)"})
+	//property.Meta(&admin.Meta{Name: "FloorSpace", Label: "Floor Space(sq.ft.)"})
+	property.Meta(&admin.Meta{Name: "GrossArea", Label: "Gross Area(sq.ft.)"})
 	property.Meta(&admin.Meta{Name: "SaleableArea", Label: "Saleable Area(sq.ft.)"})
 	property.Meta(&admin.Meta{Name: "OutdoorArea", Label: "Outdoor Area(sq.ft.)"})
 
 	property.Meta(&admin.Meta{Name: "PropertyViews", Type: "select_many"})
-	property.Meta(&admin.Meta{Name: "Condition", Type: "select_many"})
+	//property.Meta(&admin.Meta{Name: "Condition", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Facitlities", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Outdoor", Type: "select_many"})
 	property.Meta(&admin.Meta{Name: "Rooms", Type: "select_many"})
@@ -110,10 +111,10 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	district.EditAttrs("Name", "Areas")
 	district.NewAttrs(district.EditAttrs())
 
-	buildingType := Admin.AddResource(&propertys.BuildingType{}, &admin.Config{Menu: []string{"Property Settings"}})
+	//buildingType := Admin.AddResource(&propertys.BuildingType{}, &admin.Config{Menu: []string{"Property Settings"}})
 
-	buildingType.EditAttrs("Name")
-	buildingType.NewAttrs(buildingType.EditAttrs())
+	//buildingType.EditAttrs("Name")
+	//buildingType.NewAttrs(buildingType.EditAttrs())
 
 	direction := Admin.AddResource(&propertys.Direction{}, &admin.Config{Menu: []string{"Property Settings"}})
 
@@ -125,10 +126,10 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	facility.EditAttrs("Name")
 	facility.NewAttrs(facility.EditAttrs())
 
-	floorZone := Admin.AddResource(&propertys.FloorZone{}, &admin.Config{Menu: []string{"Property Settings"}})
+	//floorZone := Admin.AddResource(&propertys.FloorZone{}, &admin.Config{Menu: []string{"Property Settings"}})
 
-	floorZone.EditAttrs("Name")
-	floorZone.NewAttrs(floorZone.EditAttrs())
+	//floorZone.EditAttrs("Name")
+	//floorZone.NewAttrs(floorZone.EditAttrs())
 
 	noOfBathRooms := Admin.AddResource(&propertys.NoOfBathRooms{}, &admin.Config{Menu: []string{"Property Settings"}})
 
@@ -168,20 +169,20 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	property.IndexAttrs("MainImage", "For", "Owner", "AgentReferenceNo", "SellingPrice")
 
 	property.EditAttrs(
-		&admin.Section{
-			Title: "Property Information",
-			Rows: [][]string{
-				{"MainImage"},
-				{"Owner", "AgentReferenceNo"},
-				{"ContactPersons", "For"},
-				{"Remark"},
-			}},
+		// &admin.Section{
+		// 	Title: "Property Information",
+		// 	Rows: [][]string{
+		// 		{"MainImage"},
+		// 		{"Owner", "AgentReferenceNo"},
+		// 		{"ContactPersons", "For"},
+		// 		{"Remark"},
+		// 	}},
 		&admin.Section{
 			Title: "Selling Price",
 			Rows: [][]string{
 				{"SellingPrice", "SellingPriceRank"},
 				{"AskingRent", "Inclusive"},
-				{"ManagementFee", "GovRates"},
+			//	{"ManagementFee", "GovRates"},
 			}},
 		&admin.Section{
 			Title: "Location",
@@ -193,17 +194,17 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 		&admin.Section{
 			Title: "Details",
 			Rows: [][]string{
-				{"PropertyLayouts", "BuildingType"},
-				{"FloorZone", "NoOfBedRooms"},
-				{"FloorSpace", "SaleableArea"},
+				{"PropertyLayouts", "NoOfBedRooms"},
+				//{"FloorZone", "BuildingType"},
+				{"GrossArea", "SaleableArea"},
 				{"OutdoorArea", "NoOfBathRooms"},
-				{"PropertyViews", "Condition"},
+				{"PropertyViews"},
 			}},
 		&admin.Section{
 			Title: "Features",
 			Rows: [][]string{
 				{"Facitlities", "Outdoor"},
-				{"Rooms", "Direction"},
+				{"Rooms"},
 			}},
 		&admin.Section{
 			Title: "Upload Images",
