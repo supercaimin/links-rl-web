@@ -20,10 +20,7 @@ func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
 		Propertys1 []propertys.Property
 		Propertys2 []propertys.Property
 		Propertys3 []propertys.Property
-
-		Districts []propertys.District
-
-		tx = eutils.GetDB(req)
+		tx         = eutils.GetDB(req)
 	)
 
 	tx.Limit(5).Find(&Propertys1, "is_premier_property=? AND is_vaild=?", 1, 1)
