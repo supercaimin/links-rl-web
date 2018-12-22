@@ -17,11 +17,10 @@ type Controller struct {
 // Index products index page
 func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
 	var (
-		Products []products.Product
-		tx       = utils.GetDB(req)
+		tx = utils.GetDB(req)
 	)
 
-	tx.Preload("Category").Find(&Products)
+	tx.Find(&Propertys)
 
 	ctrl.View.Execute("index", map[string]interface{}{}, req, w)
 }
