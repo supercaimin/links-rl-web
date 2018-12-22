@@ -76,3 +76,15 @@ en-US:
     about: "ABOUT US"
     join_our_team: "JOIN OUR TEAM"
     contact_us: "CONTACT US"
+  home:
+    search_tip: "SEARCH WHAT YOU ARE LOOKING FOR..."
+    search_placeholder: "Search Property With Name,Address"
+    buy_a_property: "Buy a property"
+    rent_a_property: "Rent a property"
+    ppfsar: "Premier Properties For Sale And Rent"
+    lihk: "Living In Hong Kong"
+    hp: "Hot Picks"
+    lypwu: "List Your Property With Us"
+    disclaimer: "Disclaimer"
+    disclaimer_content: "The information contained on the list should be regarded solely as a reference guide.It is subject to change without prior notice and does not form part of any offer or contract.Whilst care has been taken in its preparation, no representaion is made or responsibility accepted for the accuracy of the whole or any part thereof."
+

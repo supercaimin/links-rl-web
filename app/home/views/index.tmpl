@@ -2,20 +2,20 @@
         <div class="padding-box-wrapper">
             <img src="/assets/img/banner.png" alt="">
             <div class="banner-content container">
-                <p class="banner-title">SEARCH WHAT YOU ARE LOOKING FOR...</p>
+                <p class="banner-title">{{ t "layout.home.search_tip" }}</p>
                 <div class="banner-input-group">
-                    <input class="banner-input" type="text" placeholder="Search Property With Name,Address">
+                    <input class="banner-input" type="text" placeholder="{{ t "layout.home.search_placeholder" }}">
                 </div>
                 <div class="banner-btn-group">
-                    <a class="btn" href="javascript:">Buy a property &nbsp;&nbsp;&nbsp;-></a>
-                    <a class="btn" href="javascript:">Rent a property &nbsp;&nbsp;&nbsp; -></a>
+                    <a class="btn" href="javascript:">{{ t "layout.home.buy_a_property" }} &nbsp;&nbsp;&nbsp;-></a>
+                    <a class="btn" href="javascript:">{{ t "layout.home.rent_a_property" }} &nbsp;&nbsp;&nbsp; -></a>
                 </div>
             </div>
         </div>
     </div>
     <div class="content">
         <div class="content-header">
-            <p class="content-title">Premier Properties For Sale And Rent</p>
+            <p class="content-title">{{ t "layout.home.ppfsar" }}</p>
         </div>
         <div class="content-body">
             <div class="swiper-container room-swiper-container">
@@ -250,7 +250,7 @@
 
     <div class="content">
         <div class="content-header">
-            <p class="content-title">Hot Picks</p>
+            <p class="content-title">{{ t "layout.home.hp" }}</p>
         </div>
         <div class="content-body">
             <div class="hot-card-row row">
