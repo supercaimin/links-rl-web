@@ -39,7 +39,7 @@ func (app App) ConfigureApplication(application *application.Application) {
 	application.Router.Get("/contact", controller.Contact)
 	application.Router.Get("/about", controller.About)
 	application.Router.Get("/show", controller.Show)
-	application.Router.Get("/submit_property", controller.SumbmitProperty)
+	application.Router.Post("/submit_property", controller.SumbmitProperty)
 
 	//application.Router.Get("/products/{code}", controller.Show)
 	//application.Router.Get("/{gender:^(men|women|kids)$}", controller.Gender)
