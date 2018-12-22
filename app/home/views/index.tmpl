@@ -153,27 +153,28 @@
         </div>
         <div class="content-body">
             <div class="hot-card-row row">
+                {{range .Propertys3}}
                 <div class="col-md-4">
                     <div class="card hot-card ">
                         <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
+                            <img src="{{.MainImage.URL}}">
                             <div class="card-mask">
                                 <div class="card-mask-content">
                                     <dl>
                                         <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
+                                        <dd>{{.SaleableArea}} s.f.</dd>
                                     </dl>
                                     <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
+                                        <dt>Outdoor :</dt>
+                                        <dd>{{OutdoorArea}} s.f.</dd>
                                     </dl>
                                     <dl>
                                         <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
+                                        <dd>{{.GrossArea}}  s.f.</dd>
                                     </dl>
                                     <dl>
                                         <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
+                                        <dd>{{.NoOfBedRooms}}</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -187,176 +188,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card hot-card ">
-                        <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
-                            <div class="card-mask">
-                                <div class="card-mask-content">
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
-                                <span class="jiantou jiantou-hui"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card hot-card ">
-                        <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
-                            <div class="card-mask">
-                                <div class="card-mask-content">
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
-                                <span class="jiantou jiantou-hui"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card hot-card ">
-                        <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
-                            <div class="card-mask">
-                                <div class="card-mask-content">
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
-                                <span class="jiantou jiantou-hui"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card hot-card ">
-                        <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
-                            <div class="card-mask">
-                                <div class="card-mask-content">
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
-                                <span class="jiantou jiantou-hui"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card hot-card ">
-                        <div class="card-img-top">
-                            <img src="/assets/img/room1.png">
-                            <div class="card-mask">
-                                <div class="card-mask-content">
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Saleable :</dt>
-                                        <dd>1,314 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Gross :</dt>
-                                        <dd>1,535 s.f.</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Rooms :</dt>
-                                        <dd>3 Bedrooms including 1 Ensulte</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
-                                <span class="jiantou jiantou-hui"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {{end}}
             </div>
 
             <div class="live-in-hk text-center">
