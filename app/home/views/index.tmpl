@@ -166,7 +166,7 @@
                                     </dl>
                                     <dl>
                                         <dt>Outdoor :</dt>
-                                        <dd>{{OutdoorArea}} s.f.</dd>
+                                        <dd>{{.OutdoorArea}} s.f.</dd>
                                     </dl>
                                     <dl>
                                         <dt>Gross :</dt>
@@ -180,9 +180,9 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Baguio Villa (Upper) - T19-27</h5>
-                            <p class="card-text">For Rent HK$68,000 incl.</p>
-                            <a href="javascript:" class="card-link">
+                            <h5 class="card-title">{{.BuildingName}} - T19-27</h5>
+                            <p class="card-text">For {{.For}} HK${{.SellingPrice}} incl.</p>
+                            <a href="/show?id={{.ID}}" class="card-link">
                                 <span class="jiantou jiantou-hui"></span>
                             </a>
                         </div>
