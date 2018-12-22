@@ -33,6 +33,13 @@ func (app App) ConfigureApplication(application *application.Application) {
 	app.ConfigureAdmin(application.Admin)
 
 	//application.Router.Get("/", controller.Index)
+
+	application.Router.Get("/buy", controller.Buy)
+	application.Router.Get("/sell", controller.Sell)
+	application.Router.Get("/join", controller.Join)
+	application.Router.Get("/contact", controller.Contact)
+	application.Router.Get("/about", controller.About)
+	application.Router.Get("/show", controller.Show)
 	//application.Router.Get("/products/{code}", controller.Show)
 	//application.Router.Get("/{gender:^(men|women|kids)$}", controller.Gender)
 	//application.Router.Get("/category/{code}", controller.Category)
