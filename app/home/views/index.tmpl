@@ -24,15 +24,14 @@
                         <div class="room-cards padding-box">
                             <div class="padding-box-wrapper">
                                 <div class="row">
-                                    {{range .Propertys}}
+                                    {{range .Propertys1}}
                                     <div class="room-card">
-
                                         <div class="padding-box">
                                             <div class="card padding-box-wrapper">
                                                 <img class="card-img-top" src="{{.MainImage.Url}}">
                                                 <div class="card-mask"></div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{.Location.Regin}}</h5>
+                                                    <h5 class="card-title">{{.Region}}</h5>
                                                     <p class="card-text">{{.BuildingName}}</p>
                                                     <p class="card-summary">Sole Agent For {{.For}} HK${{.SellingPrice}}</p>
                                                 </div>
@@ -44,80 +43,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                  <div class="swiper-slide">
                         <div class="room-cards padding-box">
                             <div class="padding-box-wrapper">
                                 <div class="row">
+                                    {{range .Propertys2}}
                                     <div class="room-card">
                                         <div class="padding-box">
                                             <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
+                                                <img class="card-img-top" src="{{.MainImage.Url}}">
                                                 <div class="card-mask"></div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
+                                                    <h5 class="card-title">{{.Region}}</h5>
+                                                    <p class="card-text">{{.BuildingName}}</p>
+                                                    <p class="card-summary">Sole Agent For {{.For}} HK${{.SellingPrice}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    </div>                                            
+                                    {{end}}
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>               
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
