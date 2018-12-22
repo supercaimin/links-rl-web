@@ -36,7 +36,7 @@
     <div class="grid__col is-10 product_lists">
       <h1>{{ .CategoryName }}</h1>
       <ul class="grid ">
-        {{range .Products}}
+        {{range .Propertys}}
           <li class="grid__col is-4">
               <a href="{{.DefaultPath}}">
                 <div class="product_image" style="background-image: url({{.MainImageURL}});">

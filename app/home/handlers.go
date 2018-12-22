@@ -2,10 +2,10 @@ package home
 
 import (
 	"net/http"
-	"github.com/qor/qor-example/models/propertys"
+
 	"github.com/qor/qor"
-	"github.com/qor/qor/utils"
 	eutils "github.com/qor/qor-example/utils"
+	"github.com/qor/qor/utils"
 	"github.com/qor/render"
 )
 
@@ -17,14 +17,13 @@ type Controller struct {
 // Index home index page
 func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
 	var (
-		Pros []propertys.Property
-		tx       = eutils.GetDB(req)
+		Propertys []propertys.Property
+		tx        = eutils.GetDB(req)
 	)
 
-	tx.Preload("Category").Find(&Pros)
+	tx.Find(&Propertys)
 
-
-	ctrl.View.Execute("index", map[string]interface{}{}, req, w)
+	ctrl.View.Execute("index", map[string]interface{}{"Propertys": Propertys}, req, w)
 }
 
 // SwitchLocale switch locale

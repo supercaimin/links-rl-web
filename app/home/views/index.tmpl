@@ -7,8 +7,8 @@
                     <input class="banner-input" type="text" placeholder="{{ t "layout.home.search_placeholder" }}">
                 </div>
                 <div class="banner-btn-group">
-                    <a class="btn" href="javascript:">{{ t "layout.home.buy_a_property" }} &nbsp;&nbsp;&nbsp;-></a>
-                    <a class="btn" href="javascript:">{{ t "layout.home.rent_a_property" }} &nbsp;&nbsp;&nbsp; -></a>
+                    <a class="btn" href="/buy">{{ t "layout.home.buy_a_property" }} &nbsp;&nbsp;&nbsp;-></a>
+                    <a class="btn" href="/rent">{{ t "layout.home.rent_a_property" }} &nbsp;&nbsp;&nbsp; -></a>
                 </div>
             </div>
         </div>
@@ -24,71 +24,22 @@
                         <div class="room-cards padding-box">
                             <div class="padding-box-wrapper">
                                 <div class="row">
+                                    {{range .Propertys}}
                                     <div class="room-card">
+
                                         <div class="padding-box">
                                             <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
+                                                <img class="card-img-top" src="{{.MainImage.Url}}">
                                                 <div class="card-mask"></div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
+                                                    <h5 class="card-title">{{.Location.Regin}}</h5>
+                                                    <p class="card-text">{{.BuildingName}}</p>
+                                                    <p class="card-summary">Sole Agent For {{.For}} HK${{.SellingPrice}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-card">
-                                        <div class="padding-box">
-                                            <div class="card padding-box-wrapper">
-                                                <img class="card-img-top" src="/assets/img/room1.png">
-                                                <div class="card-mask"></div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">PRO CONTRACTOR</h5>
-                                                    <p class="card-text">Consort Rise</p>
-                                                    <p class="card-summary">Sole Agent For Sale HK$268,000,000</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                                            
+                                    {{end}}
                                 </div>
                             </div>
                         </div>
