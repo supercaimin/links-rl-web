@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      {{render_seo_tag}}
     <title>LINKS Realty Limited</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/animate.css">
@@ -34,13 +35,21 @@
                     <a class="nav-link" href="/rent">{{ t "layout.navs.rent" }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">{{ t "layout.navs.about_us" }}</a>
+                    <a class="nav-link" href="/about">Living In HK</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/join">{{ t "layout.navs.join_our_team" }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">{{ t "layout.navs.contact_us" }}</a>
+                    <a class="nav-link" href="/contact">{{ t "layout.navs.about_us" }}
+                                        <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">jmeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li><a href="#">Jasper Report</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">另一个分离的链接</a></li>
+                </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/switch_locale?locale=en-US" role="button" data-toggle="dropdown"

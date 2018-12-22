@@ -21,6 +21,8 @@ func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
 		Propertys2 []propertys.Property
 		Propertys3 []propertys.Property
 
+		Districts []propertys.District
+
 		tx = eutils.GetDB(req)
 	)
 
