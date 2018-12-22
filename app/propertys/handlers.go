@@ -16,12 +16,6 @@ type Controller struct {
 
 // Index products index page
 func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
-	var (
-		tx = utils.GetDB(req)
-	)
-
-	tx.Find(&Propertys)
-
 	ctrl.View.Execute("index", map[string]interface{}{}, req, w)
 }
 

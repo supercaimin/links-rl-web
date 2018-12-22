@@ -2,9 +2,10 @@ package home
 
 import (
 	"net/http"
-
+	"github.com/qor/qor-example/models/propertys"
 	"github.com/qor/qor"
 	"github.com/qor/qor/utils"
+	eutils "github.com/qor/qor-example/utils"
 	"github.com/qor/render"
 )
 
@@ -15,7 +16,14 @@ type Controller struct {
 
 // Index home index page
 func (ctrl Controller) Index(w http.ResponseWriter, req *http.Request) {
-	utils.SetCookie(http.Cookie{Name: "locale", Value: "en-US"}, &qor.Context{Request: req, Writer: w})
+	var (
+		Pros []propertys.Property
+		tx       = eutils.GetDB(req)
+	)
+
+	tx.Preload("Category").Find(&Pros)
+
+
 	ctrl.View.Execute("index", map[string]interface{}{}, req, w)
 }
 
