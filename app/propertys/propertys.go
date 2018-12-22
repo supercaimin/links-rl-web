@@ -3,7 +3,7 @@ package propertys
 import (
 	"github.com/qor/admin"
 	"github.com/qor/qor-example/config/application"
-	"github.com/qor/qor-example/models/propertys"
+	"github.com/qor/qor-example/utils/funcmapmaker"
 )
 
 var PriceRanks = []string{"Thousands", "Millions"}
@@ -27,10 +27,10 @@ type Config struct {
 func (app App) ConfigureApplication(application *application.Application) {
 	//controller := &Controller{View: render.New(&render.Config{AssetFileSystem: application.AssetFS.NameSpace("propertys")}, "app/propertys/views")}
 
-	//funcmapmaker.AddFuncMapMaker(controller.View)
+	funcmapmaker.AddFuncMapMaker(controller.View)
 	app.ConfigureAdmin(application.Admin)
 
-	//application.Router.Get("/products", controller.Index)
+	application.Router.Get("/", controller.Index)
 	//application.Router.Get("/products/{code}", controller.Show)
 	//application.Router.Get("/{gender:^(men|women|kids)$}", controller.Gender)
 	//application.Router.Get("/category/{code}", controller.Category)
@@ -182,7 +182,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 			Rows: [][]string{
 				{"SellingPrice", "SellingPriceRank"},
 				{"AskingRent", "Inclusive", "For"},
-			//	{"ManagementFee", "GovRates"},
+				//	{"ManagementFee", "GovRates"},
 			}},
 		&admin.Section{
 			Title: "Location",

@@ -18,7 +18,6 @@ import (
 	"github.com/qor/qor-example/app/home"
 	"github.com/qor/qor-example/app/pages"
 	"github.com/qor/qor-example/app/propertys"
-	"github.com/qor/qor-example/app/products"
 
 	"github.com/qor/qor-example/app/static"
 	"github.com/qor/qor-example/config"
@@ -82,7 +81,7 @@ func main() {
 	Application.Use(api.New(&api.Config{}))
 	Application.Use(adminapp.New(&adminapp.Config{}))
 	Application.Use(home.New(&home.Config{}))
-	Application.Use(products.New(&products.Config{}))
+	A //pplication.Use(products.New(&products.Config{}))
 	Application.Use(propertys.New(&propertys.Config{}))
 
 	Application.Use(account.New(&account.Config{}))
