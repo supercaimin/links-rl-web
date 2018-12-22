@@ -16,9 +16,9 @@ func (ctrl Controller) Buy(w http.ResponseWriter, req *http.Request) {
 	ctrl.View.Execute("buy", map[string]interface{}{}, req, w)
 }
 
-// Sell page
-func (ctrl Controller) Sell(w http.ResponseWriter, req *http.Request) {
-	ctrl.View.Execute("sell", map[string]interface{}{}, req, w)
+// Rent page
+func (ctrl Controller) Rent(w http.ResponseWriter, req *http.Request) {
+	ctrl.View.Execute("rent", map[string]interface{}{}, req, w)
 }
 
 // Join page

@@ -3,7 +3,6 @@ package propertys
 import (
 	"github.com/qor/admin"
 	"github.com/qor/qor-example/config/application"
-	"github.com/qor/qor-example/models/propertys"
 	"github.com/qor/qor-example/utils/funcmapmaker"
 	"github.com/qor/render"
 )
@@ -35,7 +34,7 @@ func (app App) ConfigureApplication(application *application.Application) {
 	//application.Router.Get("/", controller.Index)
 
 	application.Router.Get("/buy", controller.Buy)
-	application.Router.Get("/sell", controller.Sell)
+	application.Router.Get("/rent", controller.Rent)
 	application.Router.Get("/join", controller.Join)
 	application.Router.Get("/contact", controller.Contact)
 	application.Router.Get("/about", controller.About)
