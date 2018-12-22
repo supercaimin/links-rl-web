@@ -198,25 +198,25 @@
             </div>
 
             <div class="contact container collapse">
-                <form>
+                <form action="/submit_property" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6 contact-name">
-                            <input type="text" class="form-control" placeholder="Property Name">
+                            <input type="text" class="form-control" placeholder="Property Name" name="Name">
                         </div>
                         <div class="form-group col-md-6 contact-address">
-                            <input type="text" class="form-control" placeholder="Property Address">
+                            <input type="text" class="form-control" placeholder="Property Address" name="Address">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6 contact-uname">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" placeholder="Your Name" name=“Contact”>
                         </div>
                         <div class="form-group col-md-6 contact-phone">
                             <input type="text" class="form-control" placeholder="Contact">
                         </div>
                     </div>
                     <div class="form-group contact-text">
-                        <textarea class="form-control" name="" rows="4"
+                        <textarea class="form-control" name="details" rows="4"
                                   placeholder="Brief specifications of your property..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
