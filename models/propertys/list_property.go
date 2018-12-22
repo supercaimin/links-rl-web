@@ -6,9 +6,10 @@ import (
 
 type ListProperty struct {
 	gorm.Model
-	Name     string
-	Address  string
-	Contact  string
-	Details  string `sql:"type:text"`
-	IsReview bool
+	PropertyName string
+	Name         string
+	Address      string
+	Contact      string
+	Details      string `sql:"type:text"`
+	IsReview     bool
 }
